@@ -1,0 +1,20 @@
+table,tr,td {
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+}
+
+table tr:nth-child(2n) {
+    background: #e8edff;
+}
+
+td:first-child{
+    width: 116px;
+}
+
+h3 {
+    text-align: center;
+}
+
