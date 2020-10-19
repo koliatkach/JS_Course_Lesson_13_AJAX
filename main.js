@@ -9,6 +9,7 @@ let node = null;
 let URL =  'https://swapi.dev/api/people/?page=1';
 let btnTas1Add = document.getElementById('btn-1-test-add-ajax');
 let btnTask1Next = document.getElementById('btn-1-test');
+let divTask1 = document.getElementById('div_task1');
 
 // робимо фетч та виводимо на сторінку перші 10 елементів
 btnTas1Add.onclick = function () {
@@ -31,7 +32,15 @@ function sendRequest(method,url,body = null) {
 function goToNextPage() {
     i++;
     sendRequest('GET',changeNumOfPageToNext())
+        .then(remove)
         .then(createTable);
+}
+
+function remove() {
+    let divChild = divTask1.childNodes;
+    for (let k = 0; k < divChild.length; k++) {
+        divChild[k].remove();
+    }
 }
 
 function searchInNextPage() {
